@@ -1,16 +1,16 @@
-package rotto;
+package lotto;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Rotto {
+public class Lotto {
     private static final List<Integer> rottoAllNumbers = createAllNumberOfRotto();
 
     private final List<Integer> numbers;
 
-    Rotto() {
+    Lotto() {
         this.numbers = createNumbers();
     }
 
