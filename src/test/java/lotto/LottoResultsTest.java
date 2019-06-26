@@ -18,7 +18,7 @@ public class LottoResultsTest {
     @BeforeEach
     public void setUp() {
         LottoFactory lottoFactory = new LottoFactory(14_000);
-        this.lottos = lottoFactory.createRottos();
+        this.lottos = lottoFactory.createLottos();
     }
 
     @DisplayName("인자가 1~6이 아닌 경우 예외를 발생합니다.")
@@ -45,7 +45,7 @@ public class LottoResultsTest {
     }
 
     private double getExpectedIncomeRate(int countOfLotto, int fitCount) {
-        float purchaseAmounts = LottoFactory.SINGLE_ROTTO_AMOUNT * countOfLotto;
+        float purchaseAmounts = LottoFactory.SINGLE_LOTTO_AMOUNT * countOfLotto;
 
         LottoAmount lottoAmount = LottoAmount.getByFitCount(fitCount);
         float rottoAmountValue = lottoAmount.getAmount();

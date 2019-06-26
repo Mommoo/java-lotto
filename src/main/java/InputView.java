@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class InputView {
     private static final String PURCHASE_AMOUNT_GUIDE_TEXT = "구입금액을 입력해 주세요.";
-    private static final String PURCHASE_RESULT_TEXT_FORMAT = "%d개를 구매했습니다.";
+    private static final String LOTTERY_NUMBER_GUIDE_TEXT = "지난 주 당첨 번호를 입력해 주세요.";
 
     private InputView() {/* prevent creating instance */}
 
-    public static int getRottoAmounts() {
+    public static int getLottoAmounts() {
         System.out.println(PURCHASE_AMOUNT_GUIDE_TEXT);
 
         Scanner scanner = new Scanner(System.in);
@@ -15,12 +15,8 @@ public class InputView {
         return Integer.parseInt(stringRottoAmounts);
     }
 
-    public static void printRottoCounts(int rottoCounts) {
-        String purchaseResultText = String.format(PURCHASE_RESULT_TEXT_FORMAT, rottoCounts);
-        System.out.println(purchaseResultText);
-    }
-
     public static String getLotteryNumbersString() {
+        System.out.println(LOTTERY_NUMBER_GUIDE_TEXT);
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

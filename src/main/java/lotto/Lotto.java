@@ -1,7 +1,9 @@
 package lotto;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -22,7 +24,7 @@ public class Lotto {
 
     private List<Integer> createNumbers() {
         Collections.shuffle(rottoAllNumbers);
-        return rottoAllNumbers.subList(0, 6);
+        return new ArrayList<>(rottoAllNumbers.subList(0, 6));
     }
 
     public List<Integer> getNumbers() {

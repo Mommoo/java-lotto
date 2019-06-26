@@ -9,7 +9,7 @@ public class LottoResults {
     private static final int MAX_LOTTO_FIT_COUNT = 6;
 
     private final int[] fitCounts;
-    private final double incomeRate;
+    private final float incomeRate;
 
     public LottoResults(String lotteryNumbersString, List<Lotto> lottos) {
         this.fitCounts = createFitCounts(lotteryNumbersString, lottos);
@@ -37,19 +37,19 @@ public class LottoResults {
                 .collect(Collectors.toList());
     }
 
-    private double computeIncomeRate(int countOfLotto) {
+    private float computeIncomeRate(int countOfLotto) {
         float totalLottoAmount = IntStream.range(0,6)
                 .map(this::getTotalLottoAmountOf)
                 .sum();
 
-        float purchaseAmounts = LottoFactory.SINGLE_ROTTO_AMOUNT * countOfLotto;
+        float purchaseAmounts = LottoFactory.SINGLE_LOTTO_AMOUNT * countOfLotto;
         float rawIncomeRate = totalLottoAmount / purchaseAmounts;
         return convertDigit2(rawIncomeRate);
     }
 
-    private double convertDigit2(float value) {
+    private float convertDigit2(float value) {
         String stringValue = String.format("%.02f", value);
-        return Double.parseDouble(stringValue);
+        return Float.parseFloat(stringValue);
     }
 
     private int getTotalLottoAmountOf(int fitIndex) {
@@ -65,7 +65,7 @@ public class LottoResults {
         return fitCounts[index];
     }
 
-    public double getIncomeRate() {
+    public float getIncomeRate() {
         return incomeRate;
     }
 }
